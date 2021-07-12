@@ -42,6 +42,3 @@ Route::get('msgcontato', function () {
 
 Route::get('resultado/exportarStream', [\App\Http\Controllers\QuestionController::class, 'exportarStream'])->name('pdfStream');
 Route::get('resultado/exportarDownload', [\App\Http\Controllers\QuestionController::class, 'exportarDownload'])->name('pdfDownload');
-
-
-Auth::routes();
