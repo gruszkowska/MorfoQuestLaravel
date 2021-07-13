@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'MorfoQuest') }}</title>
 
+    <link rel="icon" href="{!! asset('fundo_mini.ico') !!}"/>
+
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 

@@ -5,12 +5,16 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <style>
-        .titulo {
-            font-size: 2em;
+        .logo {
+            width: 30%;
+            position: absolute;
+            top: 2px;
+            right: 2px;
         }
 
         .categoria {
-            font-size: 1.5em;
+            font-size: 1.8em;
+            font-weight: bold;
         }
 
         .pergunta {
@@ -37,7 +41,7 @@
 
 <body>
 
-    <span class="titulo">MorfoQuest</span>
+    <img class="logo" src="img/logo.png">
 
     <br><br><br>
 
@@ -49,7 +53,7 @@
         </span>
     </div>
 
-    <br><br>
+    <br><br><br><br><br><br>
 
     <div>
         <span class="pergunta">
