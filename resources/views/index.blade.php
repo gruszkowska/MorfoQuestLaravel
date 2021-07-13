@@ -18,7 +18,7 @@
                                         E ai? Vamos começar?
                                     </p>
                                     <br><br>
-                                    <img src="storage/img/fundo_mini.png">
+                                    <img src="img/fundo_mini.png">
                                     <br><br>
                                     <p class="text-center text-2xl">
                                         Escolha uma categoria!
