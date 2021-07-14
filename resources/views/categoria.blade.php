@@ -56,7 +56,7 @@
                                             <label for="number">
                                                 <span class="text-xl">Quantas perguntas?</span>
                                                 <select name="number" id="number" require>
-                                                    @for($i = 5; $i < 15; $i++)
+                                                    @for($i = 5; $i <= 15; $i++)
                                                         <option value="{{$i}}">{{$i}}</option>
                                                     @endfor
                                                 </select>

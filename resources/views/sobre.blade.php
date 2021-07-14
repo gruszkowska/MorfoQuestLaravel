@@ -41,6 +41,10 @@
                                         Mariana Gruszkowska de Lacerda Soares - Biomedicina - UFF
                                     </p>
                                     <br>
+                                    <p>
+                                        &nbsp&nbsp&nbsp&nbsp Com o auxílio de: Hélio Lomeu de Oliveira Neto - Biomedicina - UFF
+                                    </p>
+                                    <br>
                                 </div>
                                 <div class="text-center md:text-lg">
                                     <br>

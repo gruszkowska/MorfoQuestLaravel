@@ -46,8 +46,12 @@
                                         <button type="submit"
                                         class="mt-4 w-full text-center rounded-md bg-red-500 px-3 py-2 hover:bg-red-300 text-white hover:text-black focus:ring-2 focus:ring-red-500 col-span-6 text-xl">Tentar
                                         novamente</a>
-                                    </form>
-                                    
+                                    </form>                                    
+                                </div>
+
+                                <div class="flex flex-row justify-center gap-8 px-5 py-5 mt-5">
+                                    <a href="{{ route('pdfStream') }}" target="_blank"><i class="far fa-file-pdf"> PDF sem resposta</i></a>
+                                    <a id="pdf" href="{{ route('pdfResposta') }}" target="_blank"><i class="far fa-file-pdf"> PDF com resposta</i></a>
                                 </div>
                             </div>
                         </div>

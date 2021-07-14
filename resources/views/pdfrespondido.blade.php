@@ -68,9 +68,15 @@
                 <span class="resposta">
                     <ul>
                         @foreach ($pergunta->respostas as $resposta)
-                            <li>
-                                {{ $resposta->resposta }}
-                            </li>
+                            @if($resposta->correta == 1)
+                                <li class="correta">
+                                    {{ $resposta->resposta }}
+                                </li>
+                            @else
+                                <li>
+                                    {{ $resposta->resposta }}
+                                </li>
+                            @endif
                         @endforeach
                     </ul>
                 </span>

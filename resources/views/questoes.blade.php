@@ -71,11 +71,6 @@
                                                     class="mt-4 w-4/5 text-center rounded-md bg-red-500 px-3 py-2 hover:bg-red-300 text-white hover:text-black focus:ring-2 focus:ring-red-500 col-span-6 text-xl flex-col justify-self-center grid justify-items-center"><span
                                                         class="text-center">Enviar</span></button>
                                             </div>
-
-                                            <div class="flex flex-row-reverse gap-8 px-5 py-5">
-                                                <a href="{{ route('pdfDownload') }}" target="_blank"><i class="fas fa-print"></i></a>
-                                                <a href="{{ route('pdfStream') }}" target="_blank"><i class="far fa-file-pdf"></i></a>
-                                            </div>
                                         </form>
                                     </div>
                                 </div>
