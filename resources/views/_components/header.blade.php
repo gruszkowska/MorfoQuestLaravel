@@ -3,7 +3,7 @@
         <nav class="flex justify-between items-center">
             <div>
                 <a class="text-4xl flex flex-row items-center px-20" href="/">
-                    <img src="img/logo.png" class="w-1/2" alt="MorfoQuest">
+                    <img src="img/logo.png" class="w-1/2" alt="{{ config('app.name', 'MorfoQuest') }}">
                 </a>
             </div>
             <ul class="flex flex-col sm:flex-row items-center mr-10">
