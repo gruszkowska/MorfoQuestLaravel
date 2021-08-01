@@ -7,6 +7,7 @@ use App\Models\Categoria;
 use App\Models\Contato;
 use App\Models\Pergunta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Mail;
 
 class HomeController extends Controller
@@ -65,6 +66,7 @@ class HomeController extends Controller
         try {
             Mail::to('morfoquest@gmail.com')->send(new MsgContato($contato));
         } catch (\Throwable $th) {
+            Log::error("errorMail" . $th->getMessage());
             return view('poscontato', ['error' => $th]);
         }
            
