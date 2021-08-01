@@ -72,6 +72,7 @@ integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEUL
                 input.after('<i id="correta" class="text-green-500 object fas fa-check"></i>')
                 respostas.hide()
                 enviar.show()
+                $('#erro').hide()
                 $('input').attr('disabled', true);
             } else {
                 $('#span_erro').remove()

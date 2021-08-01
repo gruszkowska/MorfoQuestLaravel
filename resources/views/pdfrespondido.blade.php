@@ -30,6 +30,10 @@
             font-size: 0.9em;
         }
 
+        .correta {
+            color: #EF4444;
+        }
+
         ul {
             list-style: upper-alpha;
             padding: 0;
