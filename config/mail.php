@@ -40,7 +40,7 @@ return [
             'port' => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'TLS'),
             'username' => env('MAIL_USERNAME', 'morfoquest@gmail.com'),
-            'password' => env('MAIL_PASSWORD', 'MorfoQuest2021@'),
+            'password' => env('MAIL_PASSWORD', 'npnaevkitrsulwih'),
             'timeout' => null,
             'auth_mode' => null,
         ],
