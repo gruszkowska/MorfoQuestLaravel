@@ -62,8 +62,12 @@ class HomeController extends Controller
 
         $contato = Contato::create($request->all());
 
-        Mail::to('morfoquest@gmail.com')->send(new MsgContato($contato));
-
-        return redirect()->route('contato');
+        try {
+            Mail::to('morfoquest@gmail.com')->send(new MsgContato($contato));
+        } catch (\Throwable $th) {
+            return view('poscontato', ['error' => $th]);
+        }
+           
+        return view('poscontato', ['error' => 'ok']);
     }
 }

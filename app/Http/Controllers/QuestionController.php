@@ -16,6 +16,10 @@ class QuestionController extends Controller
     {
         session_start();
 
+        $validated = $request->validate([
+            'number' => 'required|integer|between:5,15'
+        ]);
+
         if(isset($request)){
             if(!isset($_SESSION['nome'])) {
                 $_SESSION['nome'] = $request->nome;
