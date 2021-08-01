@@ -66,7 +66,7 @@ class HomeController extends Controller
         try {
             Mail::to('morfoquest@gmail.com')->send(new MsgContato($contato));
         } catch (\Throwable $th) {
-            Log::error("errorMail" . $th->getMessage());
+            //Log::error("errorMail" . $th->getMessage());
             return view('poscontato', ['error' => $th]);
         }
            

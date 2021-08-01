@@ -15,18 +15,16 @@
                                         Obrigada por entrar em contato conosco!
                                     </p>
                                     <br>
-                                    @isset($error)
-                                        @if ($error == 'ok')
-                                            <p class="text-center text-green-500">
-                                                Sua mensagem foi enviada com sucesso!
-                                            </p>
-                                        @else
-                                            <p class="text-center text-red-500">
-                                                Desculpe houve algum problema no envio da sua mensagem, tente novamente em
-                                                alguns instantes!
-                                            </p>
-                                        @endif
-                                    @endisset
+                                    @if ($error == 'ok')
+                                        <p class="text-center text-green-500">
+                                            Sua mensagem foi enviada com sucesso!
+                                        </p>
+                                    @else
+                                        <p class="text-center text-red-500">
+                                            Desculpe houve algum problema no envio da sua mensagem, tente novamente em
+                                            alguns instantes!
+                                        </p>
+                                    @endif
                                     <br>
                                     <p class="text-center">
                                         Quer voltar para a nossa 
