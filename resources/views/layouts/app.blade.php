@@ -85,11 +85,6 @@ integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEUL
             $('input').prop('disabled', false)
         })
 
-
-        if ($('option[value=10]')) {
-            $('option[value=10]').attr('selected', true)
-        }
-
     });
 </script>
 
