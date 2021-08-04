@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
-use App\Models\Pergunta;
-use App\Models\Resposta;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CategoriaController extends Controller
 {
@@ -49,6 +48,10 @@ class CategoriaController extends Controller
     public function show(Categoria $categoria)
     {
         session_start();
+
+        if(Auth::user() != '') {
+            $_SESSION['nome'] = Auth::user()->name;
+        }
 
         $_SESSION['categoria'] = $categoria;
 

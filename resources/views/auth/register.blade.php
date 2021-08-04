@@ -4,9 +4,8 @@
 <main class="sm:container sm:mx-auto sm:max-w-lg sm:mt-10">
     <div class="flex">
         <div class="w-full">
-            <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm sm:shadow-lg">
-
-                <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+            <section class="flex flex-col break-words bg-gray-100 sm:border-1 sm:rounded-md sm:shadow-lg">
+                <header class="font-semibold text-xl text-center bg-gray-300 text-black py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                     {{ __('Register') }}
                 </header>
 
@@ -15,7 +14,7 @@
                     @csrf
 
                     <div class="flex flex-wrap">
-                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                        <label for="name" class="block text-black text-sm mb-2 sm:mb-4">
                             {{ __('Name') }}:
                         </label>
 
@@ -30,7 +29,7 @@
                     </div>
 
                     <div class="flex flex-wrap">
-                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                        <label for="email" class="block text-black text-sm mb-2 sm:mb-4">
                             {{ __('E-Mail Address') }}:
                         </label>
 
@@ -46,7 +45,7 @@
                     </div>
 
                     <div class="flex flex-wrap">
-                        <label for="password" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                        <label for="password" class="block text-black text-sm mb-2 sm:mb-4">
                             {{ __('Password') }}:
                         </label>
 
@@ -62,7 +61,7 @@
                     </div>
 
                     <div class="flex flex-wrap">
-                        <label for="password-confirm" class="block text-gray-700 text-sm font-bold mb-2 sm:mb-4">
+                        <label for="password-confirm" class="block text-black text-sm mb-2 sm:mb-4">
                             {{ __('Confirm Password') }}:
                         </label>
 
@@ -72,13 +71,13 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                            class="w-full select-none font-bold whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-blue-500 hover:bg-blue-700 sm:py-4">
+                            class="w-full select-none whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-red-500 hover:bg-red-600 sm:py-4">
                             {{ __('Register') }}
                         </button>
 
-                        <p class="w-full text-xs text-center text-gray-700 my-6 sm:text-sm sm:my-8">
-                            {{ __('Already have an account?') }}
-                            <a class="text-blue-500 hover:text-blue-700 no-underline hover:underline" href="{{ route('login') }}">
+                        <p class="w-full text-xs text-center text-black my-6 sm:text-sm sm:my-8">
+                            Já tem uma conta?
+                            <a class="text-red-500 no-underline hover:underline" href="{{ route('login') }}">
                                 {{ __('Login') }}
                             </a>
                         </p>

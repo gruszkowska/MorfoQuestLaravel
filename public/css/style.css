@@ -77,3 +77,12 @@ p {
 li {
     list-style: none;
 }
+
+table {
+    width: 100%;
+}
+
+th, td {
+    border-bottom: 1px solid black;
+    padding: 15px 10px;
+}

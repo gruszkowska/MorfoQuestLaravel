@@ -1,4 +1,4 @@
-<footer class="bg-gray-300 object-bottom">
+<footer class="bg-gray-300 object-bottom mt-5">
     <div class="container mx-auto p-1">
         <nav class="flex justify-between items-center">
             <div>

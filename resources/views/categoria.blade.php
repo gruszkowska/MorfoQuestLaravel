@@ -35,9 +35,9 @@
                                         ? Vamos começar?
                                     </p>
 
-                                    @isset($_SESSION['nome'])
+                                    @if(Auth::user() == '' && isset($_SESSION['nome']))
                                         <a class="p-2 hover:text-red-500 text-sm hover:underline" href="{{ route('sair') }}">Não é você?</a>
-                                    @endisset
+                                    @endif
 
                                     <br>
                                     @if (!isset($_SESSION['nome']))

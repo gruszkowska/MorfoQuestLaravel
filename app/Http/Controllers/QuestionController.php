@@ -6,9 +6,11 @@ use App\Models\Categoria;
 use App\Models\Pergunta;
 use Barryvdh\DomPDF\Facade as PDF;
 use App\Models\Ponto;
+use App\Models\Pontuacao;
 use App\Models\Resposta;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
@@ -21,7 +23,11 @@ class QuestionController extends Controller
         ]);
 
         if(isset($request)){
-            if(!isset($_SESSION['nome'])) {
+            if(Auth::user() != '') {
+                $_SESSION['nome'] = Auth::user()->name;
+            }
+
+            else if(Auth::user() == '' && !isset($_SESSION['nome'])) {
                 $_SESSION['nome'] = $request->nome;
     
                 $nome = User::create([
@@ -71,6 +77,7 @@ class QuestionController extends Controller
         session_start();
 
         if(isset($_SESSION['questoes']) && $_SESSION['questoes'] != '') {
+
             $menu = Categoria::orderby('categoria', 'asc')->get();
 
             $acertos = array_sum($request->input());
@@ -83,6 +90,16 @@ class QuestionController extends Controller
                 'nome' => $_SESSION['nome'],
                 'porcentagem' => $porcentagem
             ]);
+
+            $categoria = Categoria::select('id')->where('categoria', $_SESSION['categoria'])->first();
+
+            if(Auth::user() != '') {
+                $pontuacao = Pontuacao::create([
+                    'user_id' => Auth::user()->id,
+                    'porcentagem' => $porcentagem,
+                    'categoria_id' => $categoria['id']
+                ]);
+            }
 
             return view('resultado', ['menu' => $menu, 'acertos' => $acertos, 'questoes' => $questoes, 'porcentagem' => $porcentagem]);
         }
