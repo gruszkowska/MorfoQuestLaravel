@@ -6,6 +6,7 @@ use App\Models\Categoria;
 use App\Models\Fabrica;
 use App\Models\Pontuacao;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ContaController extends Controller
 {
@@ -18,7 +19,7 @@ class ContaController extends Controller
     public function resultadosConta() {
         $menu = Categoria::orderby('categoria', 'asc')->get();
 
-        $pontuacoes = Pontuacao::orderBy('updated_at', 'desc')->get();
+        $pontuacoes = Pontuacao::where('user_id', Auth::user()->id)->orderBy('updated_at', 'desc')->get();
 
         foreach($pontuacoes as $pontuacao) {
             $pontuacao['categoria'] = Categoria::where('id', $pontuacao['categoria_id'])->first();
