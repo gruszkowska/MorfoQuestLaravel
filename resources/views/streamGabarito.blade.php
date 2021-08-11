@@ -31,7 +31,7 @@
         }
 
         .correta {
-            color: #EF4444;
+            color: #3B82F6;
         }
 
         ul {

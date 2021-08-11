@@ -32,6 +32,18 @@
             font-size: 0.9em;
         }
 
+        .icon {
+            width: 1.5%;
+        }
+
+        .correta {
+            color: #3B82F6;
+        }
+
+        li {
+            padding: 2px;
+        }
+
     </style>
 
 
@@ -63,7 +75,13 @@
                             @foreach ($resposta as $r)
                                 @if ($r->pergunta_id == $p->id)
                                     @foreach ($questionario as $quest)
-                                        @if ($quest->pergunta_id == $p->id)
+                                        @if ($quest->pergunta_id == $p->id
+                                        && $r->correta == 1)
+                                        <li class="correta">
+                                            {{ $r->resposta }}
+                                            <img class="icon" src="img/check.png">
+                                        </li>
+                                        @elseif($quest->pergunta_id == $p->id)
                                             <li>
                                                 {{ $r->resposta }}
                                             </li>

@@ -21,6 +21,8 @@ class RouteServiceProvider extends ServiceProvider
 
     public const INDEX = '/';
 
+    public const CONTA = '/conta';
+
     /**
      * The controller namespace for the application.
      *

@@ -50,8 +50,8 @@
                                 </div>
 
                                 <div class="flex flex-row justify-center gap-8 px-5 py-5 mt-5">
-                                    <a href="{{ route('pdfStream') }}" target="_blank"><i class="far fa-file-pdf"> PDF sem resposta</i></a>
-                                    <a id="pdf" href="{{ route('pdfResposta') }}" target="_blank"><i class="far fa-file-pdf"> PDF com resposta</i></a>
+                                    <a href="{{ route('pdfStream') }}" target="_blank"><i class="far fa-file-pdf"> PDF sem gabarito</i></a>
+                                    <a href="{{ route('pdfStreamGabarito') }}" target="_blank"><i class="far fa-file-pdf"> PDF com gabarito</i></a>
                                 </div>
                             </div>
                         </div>

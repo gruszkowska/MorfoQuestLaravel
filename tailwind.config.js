@@ -5,6 +5,8 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    listStyleType: {
+        alpha: 'upper-alpha',
     extend: {}
   },
   variants: {},

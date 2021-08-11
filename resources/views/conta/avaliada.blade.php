@@ -22,9 +22,11 @@
                                         <form class="text-center flex flex-col justify-center items-center text-lg p-2" action="{{ route('questaoAvaliada') }}" method="post">
                                             @csrf
                                             <p class="text-2xl">
-                                                Olá! Nesta sessão separamos algumas perguntas sugeridas pelos nossos
-                                                usuários para serem avaliadas quanto à validade, relevância e
-                                                acertibilidade.
+                                                Sua avaliação foi computada com sucesso!
+                                            </p>
+                                            <br><br>
+                                            <p class="text-xl">
+                                                Deseja continuar avaliando?
                                             </p>
                                             <br><br>
                                             <div class="w-3/4">
@@ -32,9 +34,9 @@
                                                     <div>Escolha uma categoria:</div>
                                                     <select class="w-1/2 justify-self-end rounded p-2" name="categoria_id"
                                                         id="categoria_id" required>
-                                                        <option value="" disabled selected>Selecione uma categoria</option>
+                                                        <option value="" disabled>Selecione uma categoria</option>
                                                         @foreach ($menu as $categoria)
-                                                            <option value="{{ $categoria->id }}">{{ $categoria->categoria }}
+                                                            <option value="{{ $categoria->id }}" @if($categoria_avaliacao == $categoria->id) selected @endif>{{ $categoria->categoria }}
                                                             </option>
                                                         @endforeach
                                                     </select>

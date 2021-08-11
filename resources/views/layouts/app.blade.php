@@ -57,7 +57,7 @@ integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEUL
     $(function() {
         var html = $('html')
 
-        var input = $('input[value=1]')
+        var input = $('.xxx')
 
         var respostas = $('#respostas')
 

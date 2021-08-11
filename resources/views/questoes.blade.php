@@ -40,8 +40,8 @@
                                                                 @foreach ($pergunta->respostas as $resposta)
                                                                 <li class="resposta p-2 md:p-4 rounded-md">
                                                                     <label for="{{$resposta->id}}">
-                                                                        <input class="input" type="radio" id="{{$resposta->id}}" name="{{$pergunta->pergunta}}"
-                                                                            value="{{$resposta->correta}}" class="rounded-md" require>
+                                                                        <input class="input @if ($resposta->correta == 1) xxx @endif" type="radio" id="{{$resposta->id}}" name="{{$pergunta->id}}"
+                                                                            value="{{$resposta->id}}" class="rounded-md" require>
                                                                         <span class="text-xs md:text-base break-words">
                                                                             {{$resposta->resposta}}
                                                                     </label><br>

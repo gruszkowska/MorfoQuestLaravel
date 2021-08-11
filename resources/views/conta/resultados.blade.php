@@ -26,17 +26,36 @@
                                                     <th>Pontuação</th>
                                                     <th>Data</th>
                                                     <th>Hora</th>
+                                                    <th>Detalhes</th>
                                                 </tr>
                                                 @foreach ($pontuacoes as $pontuacao)
-                                                <tr class="text-center">
-                                                    <td>{{ $pontuacao->categoria->categoria }}</td>
-                                                    <td>{{ $pontuacao->porcentagem }} %</td>
-                                                    <td>{{ date('d/m/Y', strtotime($pontuacao->updated_at)) }}</td>
-                                                    <td>{{ date('H:i:s', strtotime($pontuacao->updated_at)) }}</td>
-                                                </tr>
+                                                    <tr class="text-center">
+                                                        <td>{{ $pontuacao->categoria->categoria }}</td>
+                                                        <td>{{ $pontuacao->porcentagem }} %</td>
+                                                        <td>{{ date('d/m/Y', strtotime($pontuacao->updated_at)) }}</td>
+                                                        <td>{{ date('H:i', strtotime($pontuacao->updated_at)) }}</td>
+                                                        <td>
+                                                            @isset($pontuacao->quiz_id)
+                                                                <a href="{{ route('resultadosContaDetalhes') }}"
+                                                                    class="no-underline"
+                                                                    onclick="event.preventDefault();document.getElementById('resultadosContaDetalhes').submit();">
+                                                                    <i class="text-sm fas fa-info-circle"></i>
+                                                                </a>
+                                                                <form id="resultadosContaDetalhes"
+                                                                    action="{{ route('resultadosContaDetalhes') }}"
+                                                                    method="POST" class="hidden">
+                                                                    {{ csrf_field() }}
+                                                                    <input type="text" name="quiz_id"
+                                                                        value="{{ $pontuacao->quiz_id }}" hidden>
+                                                                </form>
+                                                            @endisset
+                                                        </td>
+                                                    </tr>
                                                 @endforeach
                                             </table>
                                         </div>
+                                        <br><br>
+                                        {{ $pontuacoes->links() }}
                                     </div>
                                 </div>
                             </div>

@@ -21,10 +21,11 @@
                                         <br><br>
                                         <div class="text-center flex flex-col justify-center items-center text-lg p-2">
                                             <p class="text-2xl">
-                                                Olá! Esta sessão é com você... Que tal nos sugerir questões para colocarmos no nosso acervo?
+                                                Sua sugestão foi computada com sucesso!
                                             </p>
-                                            <p>
-                                                * Questões com 10 avaliações positivas serão incluidas na biblioteca do site!
+                                            <br><br>
+                                            <p class="text-2xl">
+                                                Deseja continuar sugerindo?
                                             </p>
                                             <br><br>
                                             <p class="text-2xl">

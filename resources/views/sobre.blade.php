@@ -45,6 +45,10 @@
                                         &nbsp&nbsp&nbsp&nbsp Com o auxílio de: Hélio Lomeu de Oliveira Neto - Biomedicina - UFF
                                     </p>
                                     <br>
+                                    <p>
+                                        &nbsp&nbsp&nbsp&nbsp O site conta com uma área logada onde os usuários podem ver seu histórico de perguntas, sugerir novas perguntas e também avaliar as questões sugeridas por outros usuários. Perguntas com 10 avaliações 100% positivas serão inclusas na nossa biblioteca de perguntas e estarão disponíveis nos questionários.
+                                    </p>
+                                    <br>
                                 </div>
                                 <div class="text-center md:text-lg">
                                     <br>
@@ -60,6 +64,8 @@
                                             class="text-red-600 hover:underline" href="{{ route('contato') }}">contato</a>
                                         com a gente!
                                     </p>
+                                    <br>
+                                    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                                 </div>
                                 <div class="grid text-md mt-10">
                                     <div class="p-5 border border-red-500 justify-self-center">

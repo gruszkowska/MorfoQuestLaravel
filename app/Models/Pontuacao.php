@@ -14,6 +14,7 @@ class Pontuacao extends Model
     protected $fillable = [
         'user_id',
         'porcentagem',
-        'categoria_id'
+        'categoria_id',
+        'quiz_id'
     ];
 }

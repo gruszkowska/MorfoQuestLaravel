@@ -56,6 +56,7 @@ class CategoriaController extends Controller
         $_SESSION['categoria'] = $categoria;
 
         $_SESSION['questoes'] = '';
+        $_SESSION['quiz'] = '';
 
         $menu = Categoria::orderby('categoria', 'asc')->get();
 

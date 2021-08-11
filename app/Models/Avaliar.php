@@ -6,19 +6,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Fabrica extends Model
+class Avaliar extends Model
 {
     use HasFactory;
+
+    protected $table = 'avaliar';
 
     use SoftDeletes;
 
     protected $fillable = [
-        'pergunta',
-        'resposta_a',
-        'resposta_b',
-        'resposta_c',
-        'resposta_d',
-        'correta',
-        'categoria_id'
+        'user_id',
+        'fabrica_id',
+        'categorizacao',
+        'validade',
+        'relevancia',
+        'acertibilidade'
     ];
 }

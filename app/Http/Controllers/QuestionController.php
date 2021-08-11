@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Categoria;
 use App\Models\Pergunta;
-use Barryvdh\DomPDF\Facade as PDF;
 use App\Models\Ponto;
 use App\Models\Pontuacao;
+use App\Models\Questionario;
+use App\Models\Quiz;
 use App\Models\Resposta;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -27,7 +28,7 @@ class QuestionController extends Controller
                 $_SESSION['nome'] = Auth::user()->name;
             }
 
-            else if(Auth::user() == '' && !isset($_SESSION['nome'])) {
+            elseif(Auth::user() == '' && !isset($_SESSION['nome'])) {
                 $_SESSION['nome'] = $request->nome;
     
                 $nome = User::create([
@@ -59,6 +60,14 @@ class QuestionController extends Controller
                 }
                 
                 $_SESSION['questoes'] = $perguntas;
+
+                if (Auth::check()) {
+                    $quiz = Quiz::create([
+                        'user_id' => Auth::user()->id
+                    ]);
+
+                    $_SESSION['quiz'] = $quiz;
+                }
             } 
     
             $menu = Categoria::orderby('categoria', 'asc')->get();
@@ -80,7 +89,37 @@ class QuestionController extends Controller
 
             $menu = Categoria::orderby('categoria', 'asc')->get();
 
-            $acertos = array_sum($request->input());
+            $categoria = Categoria::select('id')->where('categoria', $_SESSION['categoria'])->first();
+                
+            $count_respostas = [];
+            $count_gabarito = [];
+            
+            foreach ($_SESSION['questoes'] as &$questao) {
+                $id = $questao->id;
+                $questao['marcada'] = $request->$id;
+            }
+
+            foreach ($_SESSION['questoes'] as &$pergunta) {
+                if (Auth::check()) {
+                    Questionario::create([
+                        'user_id' => Auth::user()->id,
+                        'quiz_id' => $_SESSION['quiz']->id,
+                        'categoria_id' => $categoria->id,
+                        'pergunta_id' => $pergunta->id,
+                        'marcada' => $pergunta['marcada']
+                    ]);
+                }
+
+                $count_respostas[] = $pergunta['marcada'];
+
+                foreach ($pergunta['respostas'] as &$resposta) {
+                    if ($resposta['correta'] == 1) {
+                        $count_gabarito[] = $resposta['id'];
+                    }   
+                }
+            }
+
+            $acertos = count(array_intersect($count_respostas, $count_gabarito));
             
             $questoes = $_SESSION['number'];
 
@@ -91,13 +130,12 @@ class QuestionController extends Controller
                 'porcentagem' => $porcentagem
             ]);
 
-            $categoria = Categoria::select('id')->where('categoria', $_SESSION['categoria'])->first();
-
             if(Auth::user() != '') {
                 $pontuacao = Pontuacao::create([
                     'user_id' => Auth::user()->id,
                     'porcentagem' => $porcentagem,
-                    'categoria_id' => $categoria['id']
+                    'categoria_id' => $categoria['id'],
+                    'quiz_id' => $_SESSION['quiz']['id']
                 ]);
             }
 
@@ -115,6 +153,7 @@ class QuestionController extends Controller
 
         if(isset($_SESSION['questoes']) && $_SESSION['questoes'] != '') {
             $_SESSION['questoes'] = '';
+            $_SESSION['quiz'] = '';
 
             $categorias = Categoria::where('categoria', $_SESSION['categoria'])->get();
             foreach ($categorias as $item) {
@@ -136,35 +175,5 @@ class QuestionController extends Controller
         session_destroy();
 
         return redirect()->route('home');
-    }
-
-    public function exportarStream() 
-    {
-        session_start();
-
-        if(isset($_SESSION['questoes']) && $_SESSION['questoes'] != '') {
-            $pdf = PDF::loadView('pdf', ['perguntas' => $_SESSION['questoes'], 'number' => $_SESSION['number']]);
-
-            return $pdf->stream('morfoquestsemresposta.pdf');
-        }
-
-        else {
-            return redirect()->route('home');
-        }
-    }
-
-    public function exportarResposta() 
-    {
-        session_start();
-
-        if(isset($_SESSION['questoes']) && $_SESSION['questoes'] != '') {
-            $pdf = PDF::loadView('pdfrespondido', ['perguntas' => $_SESSION['questoes'], 'number' => $_SESSION['number']]);
-
-            return $pdf->stream('morfoquestcomresposta.pdf');
-        }
-
-        else {
-            return redirect()->route('home');
-        }
     }
 }
