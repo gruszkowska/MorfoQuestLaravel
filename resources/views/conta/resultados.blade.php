@@ -69,10 +69,11 @@
                                                                                 value="{{ $pontuacao->quiz_id }}" hidden>
                                                                         </form>
                                                                     @else
-                                                                        <a href="#"
+                                                                        <button disabled
+                                                                        
                                                                             class="no-underline">
                                                                             <i class="text-gray-500 text-sm fas fa-info-circle"></i>
-                                                                        </a>
+                                                                        </button>
                                                                     @endisset
                                                                 </td>
                                                             </tr>
