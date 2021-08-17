@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div id="body" class="h-full md:m-auto">
-        <div class="container mx-5 mt-10">
+    <div id="body" class="h-full">
+        <div class="mx-5 mt-10">
             <div class="md:grid md:grid-cols-12 md:gap-8 pr-3 md:p-0">
                 @component('_components.menu', ['menu' => $menu])
 
@@ -19,40 +19,62 @@
 
                                         @endcomponent
                                         <br><br>
-                                        <div>
-                                            <table>
-                                                <tr class="uppercase">
-                                                    <th>Categoria</th>
-                                                    <th>Pontuação</th>
-                                                    <th>Data</th>
-                                                    <th>Hora</th>
-                                                    <th>Detalhes</th>
-                                                </tr>
-                                                @foreach ($pontuacoes as $pontuacao)
-                                                    <tr class="text-center">
-                                                        <td>{{ $pontuacao->categoria->categoria }}</td>
-                                                        <td>{{ $pontuacao->porcentagem }} %</td>
-                                                        <td>{{ date('d/m/Y', strtotime($pontuacao->updated_at)) }}</td>
-                                                        <td>{{ date('H:i', strtotime($pontuacao->updated_at)) }}</td>
-                                                        <td>
-                                                            @isset($pontuacao->quiz_id)
-                                                                <a href="{{ route('resultadosContaDetalhes') }}"
-                                                                    class="no-underline"
-                                                                    onclick="event.preventDefault();document.getElementById('resultadosContaDetalhes').submit();">
-                                                                    <i class="text-sm fas fa-info-circle"></i>
-                                                                </a>
-                                                                <form id="resultadosContaDetalhes"
-                                                                    action="{{ route('resultadosContaDetalhes') }}"
-                                                                    method="POST" class="hidden">
-                                                                    {{ csrf_field() }}
-                                                                    <input type="text" name="quiz_id"
-                                                                        value="{{ $pontuacao->quiz_id }}" hidden>
-                                                                </form>
-                                                            @endisset
-                                                        </td>
-                                                    </tr>
-                                                @endforeach
-                                            </table>
+                                        <div class="flex items-center justify-center">
+                                            <div class="container">
+                                                <table
+                                                    class="w-full flex flex-row flex-no-wrap overflow-hidden my-5 text-center">
+                                                    <thead class="text-black">
+                                                        @for ($i = 0; $i < $count; $i++)
+                                                            <tr
+                                                                class="flex flex-col flex-no wrap lg:table-row mb-2 lg:mb-0 divide-y lg:divide-none lg:border-b lg:border-black">
+                                                                <th
+                                                                    class="rounded-tl lg:rounded-none bg-red-500 lg:bg-gray-300">
+                                                                    Categoria</th>
+                                                                <th class="bg-red-500 lg:bg-gray-300">Pontuação</th>
+                                                                <th class="bg-red-500 lg:bg-gray-300">Data</th>
+                                                                <th class="bg-red-500 lg:bg-gray-300">Hora</th>
+                                                                <th
+                                                                    class="rounded-bl lg:rounded-none bg-red-500 lg:bg-gray-300">
+                                                                    Detalhes</th>
+                                                            </tr>
+                                                        @endfor
+                                                    </thead>
+                                                    <tbody class="flex-1 lg:flex-none">
+                                                        @foreach ($pontuacoes as $pontuacao)
+                                                            <tr
+                                                                class="flex flex-col flex-no wrap lg:table-row mb-2 lg:mb-0">
+                                                                <td class="truncate rounded-tr">
+                                                                    {{ $pontuacao->categoria->categoria }}</td>
+                                                                <td class="truncate">
+                                                                    {{ $pontuacao->porcentagem }} %</td>
+                                                                <td class="truncate">
+                                                                    {{ date('d/m/Y', strtotime($pontuacao->updated_at)) }}
+                                                                </td>
+                                                                <td class="truncate">
+                                                                    {{ date('H:i', strtotime($pontuacao->updated_at)) }}
+                                                                </td>
+                                                                <td class="truncate">
+                                                                    @isset($pontuacao->quiz_id)
+                                                                        <a href="{{ route('resultadosContaDetalhes') }}"
+                                                                            class="no-underline"
+                                                                            onclick="event.preventDefault();document.getElementById('resultadosContaDetalhes').submit();">
+
+                                                                            <i class="text-sm fas fa-info-circle"></i>
+                                                                        </a>
+                                                                        <form id="resultadosContaDetalhes"
+                                                                            action="{{ route('resultadosContaDetalhes') }}"
+                                                                            method="POST" class="hidden">
+                                                                            {{ csrf_field() }}
+                                                                            <input type="text" name="quiz_id"
+                                                                                value="{{ $pontuacao->quiz_id }}" hidden>
+                                                                        </form>
+                                                                    @endisset
+                                                                </td>
+                                                            </tr>
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                         </div>
                                         <br><br>
                                         {{ $pontuacoes->links() }}

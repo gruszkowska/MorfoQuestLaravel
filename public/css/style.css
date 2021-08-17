@@ -83,6 +83,31 @@ table {
 }
 
 th, td {
-    border-bottom: 1px solid black;
     padding: 15px 10px;
+    height: 50px;
+}
+
+@media (min-width: 1023px) {
+    table {
+        display: inline-table !important;
+    }
+
+    thead tr:not(:first-child) {
+      display: none;
+    }
+
+    td {
+        border-bottom: 1px solid black;
+    }
+}
+
+@media (max-width: 1023px) {
+    td {
+        border-bottom: #EF4444 1px solid;
+        border-right: #EF4444 1px solid;
+    }
+
+    td:first-child {
+        border-top: #EF4444 1px solid;
+    }
 }

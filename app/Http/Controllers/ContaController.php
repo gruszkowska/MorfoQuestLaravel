@@ -30,7 +30,9 @@ class ContaController extends Controller
             $pontuacao['categoria'] = Categoria::where('id', $pontuacao['categoria_id'])->first();
         }
 
-        return view('conta.resultados', ['menu' => $menu, 'page' => 'resultadosConta', 'pontuacoes' => $pontuacoes]);
+        $count = count($pontuacoes);
+
+        return view('conta.resultados', ['menu' => $menu, 'page' => 'resultadosConta', 'pontuacoes' => $pontuacoes, 'count' => $count]);
     }
 
     public function resultadosContaDetalhes(Request $request) {

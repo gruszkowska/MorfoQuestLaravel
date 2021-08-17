@@ -61,7 +61,7 @@
 
                     <div class="flex flex-wrap">
                         <button type="submit"
-                        class="w-full select-none whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-gray-100 bg-red-500 hover:bg-red-600 sm:py-4">
+                        class="w-full select-none whitespace-no-wrap p-3 rounded-lg text-base leading-normal no-underline text-white bg-red-500 hover:bg-red-600 sm:py-4">
                             {{ __('Login') }}
                         </button>
 
