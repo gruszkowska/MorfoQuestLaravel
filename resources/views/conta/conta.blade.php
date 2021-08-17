@@ -10,8 +10,8 @@
                 @endcomponent
                 <div class="mb-20 md:col-start-5 md:col-end-13 lg:col-start-4 lg:col-end-13">
                     <div
-                        class="container flex items-center content-center justify-center p-5 border-2 border-dotted border-black dark:border-gray-300 h-full">
-                        <div class="container flex content-center justify-center p-5 bg-gray-300 h-full">
+                        class="flex items-center content-center justify-center p-5 border-2 border-dotted border-black dark:border-gray-300 h-full">
+                        <div class="flex content-center justify-center p-5 bg-gray-300 h-full">
                             <div class="w-full h-full">
                                 <div class="h-full col-span-6 p-2 my-auto flex flex-col place-items-center items-center">
                                     <p class="text-center text-2xl">
