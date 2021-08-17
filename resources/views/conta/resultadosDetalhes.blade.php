@@ -89,7 +89,7 @@
                                                     @endforeach
                                                 @endforeach
                                             </div>
-                                            <div class="flex flex-row justify-between gap-8 px-5 py-5 mt-5 w-3/4">
+                                            <div class="flex flex-row justify-between gap-8 px-5 py-5 mt-5 w-full sm:w-3/4 wrap">
                                                 <a href="{{ route('pdf', ['quiz_id' => $pontuacao->quiz_id]) }}"
                                                     target="_blank"><i class="far fa-file-pdf"> PDF simples</i></a>
 

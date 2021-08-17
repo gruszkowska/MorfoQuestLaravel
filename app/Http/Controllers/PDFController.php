@@ -87,7 +87,7 @@ class PDFController extends Controller
                 
             }
 
-            $pdf = PDF::loadView('pdfGabarito', ['categoria' => $categoria, 'pontuacao' => $pontuacao, 'questionario' => $questionario, 'perguntas' => $perguntas, 'respostas' => $respostas]);
+            $pdf = PDF::loadView('pdfgabarito', ['categoria' => $categoria, 'pontuacao' => $pontuacao, 'questionario' => $questionario, 'perguntas' => $perguntas, 'respostas' => $respostas]);
 
             return $pdf->stream('morfoquest.pdf');
         }
@@ -114,7 +114,7 @@ class PDFController extends Controller
                 
             }
 
-            $pdf = PDF::loadView('pdfRespostas', ['categoria' => $categoria, 'pontuacao' => $pontuacao, 'questionario' => $questionario, 'perguntas' => $perguntas, 'respostas' => $respostas]);
+            $pdf = PDF::loadView('pdfrespostas', ['categoria' => $categoria, 'pontuacao' => $pontuacao, 'questionario' => $questionario, 'perguntas' => $perguntas, 'respostas' => $respostas]);
 
             return $pdf->stream('morfoquest.pdf');
         }
