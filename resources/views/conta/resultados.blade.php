@@ -53,7 +53,7 @@
                                                                 <td class="truncate">
                                                                     {{ date('H:i', strtotime($pontuacao->updated_at)) }}
                                                                 </td>
-                                                                <td class="truncate">
+                                                                <td style="height: 50px">
                                                                     @isset($pontuacao->quiz_id)
                                                                         <a href="{{ route('resultadosContaDetalhes') }}"
                                                                             class="no-underline"
