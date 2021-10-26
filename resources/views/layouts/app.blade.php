@@ -7,6 +7,14 @@
 
     <!-- Google SearchConsole -->
     <meta name="google-site-verification" content="XlSFvtTFzKzrjMlAOGgNqZ1sJeLbQG9Jwti95Yi5SII" />
+    <meta name="title" content="MorfoQuest">
+    <meta name="description" content="Site de questionários em morfologia">
+    <meta name="keywords" content="anatomia, anatomy, humanbody, morfologia">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="7 days">
+    <meta name="author" content="Mariana Gruszkowska de Lacerda Soares">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
