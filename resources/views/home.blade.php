@@ -12,12 +12,12 @@
 
         <section class="flex flex-col break-words bg-white sm:border-1 sm:rounded-md sm:shadow-sm">
 
-            <header class="font-semibold bg-gray-200 text-gray-700 py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
+            <header class="font-semibold bg-gray-200 text-black py-5 px-6 sm:py-6 sm:px-8 sm:rounded-t-md">
                 Dashboard
             </header>
 
             <div class="w-full p-6">
-                <p class="text-gray-700">
+                <p class="text-black">
                     You are logged in!
                 </p>
             </div>

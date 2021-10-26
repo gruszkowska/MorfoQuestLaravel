@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Google SearchConsole -->
+    <meta name="google-site-verification" content="XlSFvtTFzKzrjMlAOGgNqZ1sJeLbQG9Jwti95Yi5SII" />
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
